@@ -1,15 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.template')
 @section('golongan')
 	active
 @endsection
 @section('content')
 <center><h1>Daftar Golongan</h1></center>
 
-<a  href="{{url('golongan/create')}}" class="btn btn-success ">Tambah</a>
+<center><a  href="{{url('golongan/create')}}" class="btn btn-info ">Tambah</a></center>
 <hr>
 	<table border="2" class="table table-striped table-border table-hover">
 		<thead>
-			<tr class="bg-info">
+			<tr class="bg-danger">
 				<th>No</th>
 				<th>Kode Golongan</th>
 				<th>Nama Golongan</th>

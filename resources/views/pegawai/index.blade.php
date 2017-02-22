@@ -1,11 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.template')
 @section('pegawai')
     active
 @endsection
 @section('content')
+<center><a  href="{{url('pegawai/create')}}" class="btn btn-success ">Tambah</a></center><hr>
 			        <div class="col-md-6 col-md-offset-0">
-			            <div class="panel panel-info">
-			                <div class="panel-heading"><h4>Data Pegawai</h4></div>
+			            <div class="panel panel-danger">
+			                <div class="panel-heading"><h4>Daftar Pegawai</h4></div>
 			                <div class="panel-body">
 			                	<table border="2" class="table table-success table-border table-hover">
 									<thead >
@@ -35,8 +36,8 @@
 			            </div>
 			        </div>
 			        <div class="col-md-6 ">
-			            <div class="panel panel-info">
-			                <div class="panel-heading"><h4>Data User</h4></div>
+			            <div class="panel panel-danger">
+			                <div class="panel-heading"><h4>Daftar User</h4></div>
 			                <div class="panel-body">
 			                	<table border="2" class="table table-success table-border table-hover">
 									<thead >
@@ -70,7 +71,7 @@
 			                </div>
 			            </div>
 			        </div>
-					<a  href="{{url('pegawai/create')}}" class="btn btn-success form-control">Tambah</a>
+					
 	
 
 @endsection

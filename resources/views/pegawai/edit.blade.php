@@ -1,67 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.template')
 @section('pegawai')
     active
 @endsection
 @section('content')
-<h1>Edit Pegawai</h1>
 	<div class="container">
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-info">
+            <div class="panel panel-danger">
                 <div class="panel-heading"><h4>Edit Pegawai<h4></div>
                 <div class="panel-body">
                     {!! Form::model($pegawai,['method'=>'PATCH','route'=>['pegawai.update',$pegawai->id],'enctype'=>'multipart/form-data']) !!}
-    
-						<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="name" class="form-control" name="name" value="{{$pegawai->user->name}}">
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group{{ $errors->has('type_user') ? ' has-error' : '' }}">
-                            <label for="type_user" class="col-md-4 control-label">type_user</label>
-
-                            <div class="col-md-6">
-                                <input id="type_user" type="text" class="form-control" name="type_user" value="{{$pegawai->user->type_user }}"  autofocus>
-
-                                @if ($errors->has('type_user'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('type_user') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control"  name="email" value="{{$pegawai->user->email}}" >
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <div class="panel-title">Tambah Pegawai</div>
-                </div>
                 <div class="panel-body">
                     <div class="form-group{{ $errors->has('nip') ? ' has-error' : '' }}">
                             <label for="nip" class="col-md-4 control-label">NIP</label>
@@ -76,25 +24,6 @@
                                 @endif
                             </div>
                         </div>
-
-                       <!--  <div class="form-group{{ $errors->has('user_id') ? ' has-error' : '' }}">
-                            <label for="user_id" class="col-md-4 control-label">Nama Pegawai</label>
-
-                            <div class="col-md-6">
-                                <select name="user_id" class="form-control">
-                                    <option value="">pilih</option>
-                                    @foreach($user as $data)
-                                    <option value="{{$data->id}}">{{$data->name}}</option>
-                                    @endforeach
-                                </select>
-
-                                @if ($errors->has('user_id'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('user_id') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div> -->
 
                         <div class="form-group{{ $errors->has('golongan_id') ? ' has-error' : '' }}">
                             <label for="golongan_id" class="col-md-4 control-label">Nama Golongan</label>
@@ -163,5 +92,6 @@
         </div>
     </div>
 </div>
+
 
 @endsection

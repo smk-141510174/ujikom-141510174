@@ -1,13 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.template')
 @section('kategori')
     active
 @endsection
 @section('content')
 <center><h1>Daftar Kategori Lembur</h1></center>
-<a href="{{url('kategori/create')}}" class="btn btn-success">Tambah</a><hr>
+<center><a href="{{url('kategori/create')}}" class="btn btn-success">Tambah</a></center>
+<hr>
 	<table border="1" class="table table-striped table-border table-hover">
 		<thead>
-			<tr class="bg-info">
+			<tr class="bg-danger">
 				<th>No</th>
 				<th>Kode Kategori Lembur</th>
 				<th>Nama Golongan</th>

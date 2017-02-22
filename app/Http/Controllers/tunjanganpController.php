@@ -50,10 +50,11 @@ class tunjanganpController extends Controller
     {
         
         $roles=[
-            'pegawai_id'=>'required',
+            'pegawai_id'=>'required|unique:tunjangan_pegawais,pegawai_id',
         ];
         $sms=[
-            'pegawai_id.required'=>'jangan kosong',
+            'pegawai_id.required'=>'Tidak boleh kosong',
+            'pegawai_id.unique'=>'Sudah Ada',
         ];
         $validasi=Validator::make(Input::all(),$roles,$sms);
         if($validasi->fails()){
@@ -99,7 +100,7 @@ class tunjanganpController extends Controller
      */
     public function edit($id)
     {
-        $tunjanganpa=Tunjangan_pegawai::find($id);
+        $tunjanganp=Tunjangan_pegawai::find($id);
         $tunjangan=Tunjangan::all();
         $pegawai=Pegawai::all();
         return view('tunjanganp.edit',compact('pegawai','tunjangan','tunjanganp'));
@@ -114,20 +115,34 @@ class tunjanganpController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $roles=[
-            'kode_lembur_id'=>'required',
-            'pegawai_id'=>'required',
-            ];
-        $sms=[
-            'kode_lembur_id.required'=>'jangan kosong',
-            'pegawai_id.required'=>'jangan kosong',
-            ];
-        $validasi=Validator::make(Input::all(),$roles,$sms);
-        if($validasi->fails()){
-            return redirect('tunjanganp/create')
-                ->WithErrors($validasi)
-                ->WithInput();
+       $tunjanganp=Tunjangan_pegawai::where('id',$id)->first();
+        if($tunjanganp['kode_tunjangan_id'] != Request('kode_tunjangan_id')){
+
+        $rules=[
+                'kode_tunjangan_id'=>'required|unique:tunjangan_pegawais,kode_tunjangan_id',
+                'pegawai_id'=>'required',
+                ];
         }
+        else{
+
+        $rules=[
+                'kode_tunjangan_id'=>'required',
+                'pegawai_id'=>'required',
+                ];
+        }
+        $sms=[
+                'kode_tunjangan_id.required'=>'jangan kosong',
+                'kode_tunjangan_id.unique'=>'sudah ada',
+                'pegawai_id.required'=>'jangan kosong',
+
+                ];
+        $validasi=Validator::make(Input::all(),$rules,$sms);
+        if($validasi->fails()){
+            return redirect()->back()
+            ->WithErrors($validasi)
+            ->WithInput();
+        }
+
         $update=Request::all();
         $tunjanganp=Tunjangan_pegawai::find($id);
         $tunjanganp->update($update);

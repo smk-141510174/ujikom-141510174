@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
 @section('penggajian')
     active
@@ -6,7 +6,7 @@
 @section('content')
 
 <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-info">
+            <div class="panel panel-danger">
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" action="{{ url('query') }}" method="GET"">
                         {{ csrf_field() }}
@@ -69,10 +69,10 @@
 @endsection
 @section('content1')
 				<div class="col-md-15 col-md-offset-0">
-                    <div class="panel panel-info">
+                    <div class="panel panel-danger">
                         <div class="panel-body">
         <div class="col-md-15 col-md-offset-0">
-            <div class="panel panel-info">
+            <div class="panel panel-danger">
 			    <div class="panel-heading">Data Penggajian</div>
 	                <div class="panel-body">
 				        
@@ -174,7 +174,7 @@
 
 													
 												</td>
-												<td>dj</td>
+												<td>Bagian Keuangan</td>
 											</tr>
 											@endforeach
 										</tbody>

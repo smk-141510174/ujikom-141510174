@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.template')
 @section('penggajian')
     active
 @endsection
@@ -34,14 +34,14 @@
  						
 @section('content1')
 				<div class="col-md-15 col-md-offset-0">
-                    <div class="panel panel-info">
+                    <div class="panel panel-danger">
                         <div class="panel-body">
         <div class="col-md-15 col-md-offset-0">
-            <div class="panel panel-info">
+            <div class="panel panel-danger">
 			    <div class="panel-heading"><h3>Penggajian</h3></div>
 	                <div class="panel-body">
 				        
-				        <table border="2" class="table table-info table-border table-hover">
+				        <table border="2" class="table table-danger table-border table-hover">
 										<thead >
 											<tr>
 												<th>No</th>

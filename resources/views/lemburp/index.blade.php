@@ -1,14 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.template')
 @section('lemburp')
     active
 @endsection
 @section('content')
 <center><h1>Daftar Lembur Pegawai</h1></center>
 
-<a  href="{{url('lemburp/create')}}" class="btn btn-success">Tambah</a><hr>
+<center><a  href="{{url('lemburp/create')}}" class="btn btn-success">Tambah</a></center><hr>
 	<table border="1" class="table table-striped table-border table-hover">
 		<thead>
-			<tr class="bg-info">
+			<tr class="bg-danger">
 				<th>No</th>
 				<th>Nama Pegawai</th>
 				<th>Kode Kategori Lembur</th>
@@ -36,6 +36,6 @@
 			@endforeach
 		</tbody>
 	</table>
-	<a  href="{{url('lemburp/create')}}" class="btn btn-primary form-control">Tambah</a>
+	
 
 @endsection

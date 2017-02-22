@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.template')
 @section('content')
 	<div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-info">
-                <div class="panel-heading"><h3>Edit Tunjangan</h3></div>
+            <div class="panel panel-danger">
+                <div class="panel-heading"><h3>Edit Kategori Tunjangan</h3></div>
                 <div class="panel-body">
 					{!! Form::model($tunjangan,['method'=>'PATCH','route'=>['tunjangan.update',$tunjangan->id]])!!}
 						{!! Form::hidden('id',null,['class'=>'form-control']) !!}

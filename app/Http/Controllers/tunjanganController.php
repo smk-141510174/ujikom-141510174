@@ -42,7 +42,7 @@ class tunjanganController extends Controller
     public function store(Request $request)
     {
             $roles=[
-                'kode_t'=>'required|unique:tunjangans',
+                'kode_t'=>'required|unique:tunjangans,kode_t',
                 'jabatan_id'=>'required',
                 'golongan_id'=>'required',
                 'besar_uang'=>'required',

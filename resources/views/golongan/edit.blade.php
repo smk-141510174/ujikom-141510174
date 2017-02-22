@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.template')
 @section('golongan')
     active
 @endsection
@@ -6,7 +6,7 @@
 	<div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-info"> 
+            <div class="panel panel-danger"> 
             <div class="panel-heading"><h3>Edit Golongan</h3></div> 
                 <div class="panel-body">
 					{!! Form::model($golongan,['method'=>'PATCH','route'=>['golongan.update',$golongan->id]])!!}
