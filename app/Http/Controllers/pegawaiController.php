@@ -17,6 +17,9 @@ class pegawaiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+        $this->middleware('HRD');
+    }
     public function index()
     {
         $pegawai=Pegawai::all();
@@ -101,7 +104,7 @@ class pegawaiController extends Controller
                 $pegawai->golongan_id = Request('golongan_id');
                 $pegawai->photo=$filename;
                 $pegawai->save();
-                return redirect('pegawai');
+                return redirect('pegawai')->with('alert-success','Data Berhasil Disimpan');
         }
         
     }

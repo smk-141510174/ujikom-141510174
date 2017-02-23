@@ -1,7 +1,7 @@
 @extends('layouts.template')
 @section('content')
 <center><h1>Daftar Tunjangan Pegawai</h1></center>
-<center><a  href="{{url('tunjanganp/create')}}" class="btn btn-success">Tambah</a></center><hr>
+<center><a  href="{{url('tunjanganp/create')}}" class="btn btn-info">Tambah</a></center><hr>
 	<table border="1" class="table table-striped table-border table-hover">
 		<thead>
 			<tr class="bg-danger">
@@ -18,13 +18,10 @@
 				<td>{{$no++}}</td>
 				<td>{{$data->tunjangan->kode_t}}</td>
 				<td>{{$data->pegawai->user->name}}</td>
-				<td>
-					<a href="{{route('tunjanganp.edit',$data->id)}}" class='btn btn-primary'> Edit </a>
-				</td>
-				<td>
+				<td><center>
 					{!! Form::open(['method'=>'DELETE','route'=>['tunjanganp.destroy',$data->id]]) !!}
 					{!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
-					{!! Form::close() !!}
+					{!! Form::close() !!}</center>
 				</td>
 			</tr>
 			@endforeach

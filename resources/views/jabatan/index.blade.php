@@ -23,7 +23,7 @@
 				<td>{{$no++}}</td>
 				<td>{{$data->kode_j}}</td>
 				<td>{{$data->nama_j}}</td>
-				<td>{{$data->besar_uang}}</td>
+				<td>Rp.{{$data->besar_uang}}</td>
 				<td>
 					<a href="{{route('jabatan.edit',$data->id)}}" class='btn btn-primary'> Edit </a>
 				</td>

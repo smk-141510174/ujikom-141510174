@@ -3,7 +3,7 @@
     active
 @endsection
 @section('content')
-<center><a  href="{{url('pegawai/create')}}" class="btn btn-success ">Tambah</a></center><hr>
+<center><a  href="{{url('pegawai/create')}}" class="btn btn-info ">Tambah</a></center><hr>
 			        <div class="col-md-6 col-md-offset-0">
 			            <div class="panel panel-danger">
 			                <div class="panel-heading"><h4>Daftar Pegawai</h4></div>

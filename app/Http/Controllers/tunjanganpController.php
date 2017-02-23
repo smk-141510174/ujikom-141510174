@@ -16,6 +16,9 @@ class tunjanganpController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+        $this->middleware('HRD');
+    }
     public function index()
     {
         $tunjanganp=Tunjangan_pegawai::all();
@@ -158,6 +161,6 @@ class tunjanganpController extends Controller
     public function destroy($id)
     {
         $tunjanganp=Tunjangan_pegawai::find($id)->delete();
-        return redirect('tunjanganp');
+        return redirect('tunjanganp')->with('alert-success','Data Berhasil Dihapus');;
     }
 }

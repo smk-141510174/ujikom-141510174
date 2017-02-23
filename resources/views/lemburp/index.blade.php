@@ -5,7 +5,7 @@
 @section('content')
 <center><h1>Daftar Lembur Pegawai</h1></center>
 
-<center><a  href="{{url('lemburp/create')}}" class="btn btn-success">Tambah</a></center><hr>
+<center><a  href="{{url('lemburp/create')}}" class="btn btn-info">Tambah</a></center><hr>
 	<table border="1" class="table table-striped table-border table-hover">
 		<thead>
 			<tr class="bg-danger">
@@ -23,7 +23,7 @@
 				<td>{{$no++}}</td>
 				<td>{{$data->pegawai->user->name}}</td>
 				<td>{{$data->kategori->kode_l}}</td>
-				<td>{{$data->Jumlah_jam}}</td>
+				<td>{{$data->Jumlah_jam}}&nbsp Jam</td>
 				<td>
 					<a href="{{route('lemburp.edit',$data->id)}}" class='btn btn-primary'> Edit </a>
 				</td>

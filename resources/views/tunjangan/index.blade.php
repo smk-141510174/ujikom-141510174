@@ -1,7 +1,7 @@
 @extends('layouts.template')
 @section('content')
 <center><h1>Daftar Kategori Tunjangan</h1></center>
-<center><a  href="{{url('tunjangan/create')}}" class="btn btn-success ">Tambah</a></center><hr>
+<center><a  href="{{url('tunjangan/create')}}" class="btn btn-info ">Tambah</a></center><hr>
 	<table border="1" class="table table-striped table-border table-hover">
 		<thead>
 			<tr class="bg-danger">
