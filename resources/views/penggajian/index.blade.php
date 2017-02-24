@@ -28,12 +28,32 @@
                         <td>{{$penggajians->Tunjangan_pegawai->Pegawai->User->name}}</td>
                         
                         <td>{{$penggajians->Tunjangan_pegawai->Pegawai->nip}}</td>
-                        <td><b>@if($penggajians->tanggal_pengambilan == ""&&$penggajians->status_pengambilan == "0")
-                            Gaji Belum Diambil
+                        <<td><b>@if($penggajians->tanggal_pengambilan == ""&&$penggajians->status_pengambilan == "0")
+
+                        Gaji Belum Diambil
+
+                                <div >
+
+                                    <a class="btn btn-primary" href="{{route('penggajian.edit',$penggajians->id)}}">Ubah Pengambilan</a>
+
+                                </div>
+
+                            
+
                         @elseif($penggajians->tanggal_pengambilan == ""||$penggajians->status_pengambilan == "0")
+
                             Gaji Belum Diambil
+
+                            <div>
+
+                                    <a class="btn btn-warning" href="{{route('penggajian.edit',$penggajians->id)}}">Ambil</a>
+
+                                </div>
+
                         @else
+
                             Gaji Sudah Diambil Pada {{$penggajians->tanggal_pengambilan}}
+
                         @endif</b></td>
 
 

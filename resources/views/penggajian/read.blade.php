@@ -11,7 +11,7 @@
 
                         <h4>{{$penggajian->Tunjangan_pegawai->Pegawai->User->name}}</h4>
                         <h5>{{$penggajian->Tunjangan_pegawai->Pegawai->nip}}</h5><hr>
-                    <h3>Status Pengambilan</h3>
+                        <h3>Status Pengambilan</h3>
                         <b>@if($penggajian->tanggal_pengambilan == ""&&$penggajian->status_pengambilan == "0")
                             Gaji Belum Diambil
                         @elseif($penggajian->tanggal_pengambilan == ""||$penggajian->status_pengambilan == "0")
