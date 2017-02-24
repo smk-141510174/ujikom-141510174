@@ -3,13 +3,69 @@
     active
 @endsection
 @section('content')
-	<div class="container">
+    <div class="container">
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-danger">
-                <div class="panel-heading"><h4>Edit Pegawai<h4></div>
+                <div class="panel-heading"><h4>Edit User<h4></div>
                 <div class="panel-body">
                     {!! Form::model($pegawai,['method'=>'PATCH','route'=>['pegawai.update',$pegawai->id],'enctype'=>'multipart/form-data']) !!}
+    
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Name</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="name" class="form-control" name="name" value="{{$pegawai->user->name}}">
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('type_user') ? ' has-error' : '' }}">
+                            <label for="type_user" class="col-md-4 control-label">Permission</label>
+
+                            <div class="col-md-6">
+                                <select id="type_user" class="form-control" name="type_user" value="{{ old('type_user') }}"  autofocus>
+                                    <option value="">Pilih</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="HRD">HRD</option>
+                                    <option value="BagianKeuangan">Bagian Keuangan</option>
+                                    <option value="Karyawan">Karyawan</option>
+                                </select>
+                                @if ($errors->has('type_user'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('type_user') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control"  name="email" value="{{$pegawai->user->email}}" >
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <div class="panel-title">Edit Pegawai</div>
+                </div>
                 <div class="panel-body">
                     <div class="form-group{{ $errors->has('nip') ? ' has-error' : '' }}">
                             <label for="nip" class="col-md-4 control-label">NIP</label>
@@ -24,6 +80,7 @@
                                 @endif
                             </div>
                         </div>
+
 
                         <div class="form-group{{ $errors->has('golongan_id') ? ' has-error' : '' }}">
                             <label for="golongan_id" class="col-md-4 control-label">Nama Golongan</label>
@@ -86,12 +143,11 @@
                                 </button>
                             </div>
                         </div>
-				{!! Form::close() !!}
+                {!! Form::close() !!}
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 @endsection

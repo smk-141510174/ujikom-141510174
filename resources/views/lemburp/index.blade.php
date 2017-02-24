@@ -24,12 +24,12 @@
 				<td>{{$data->pegawai->user->name}}</td>
 				<td>{{$data->kategori->kode_l}}</td>
 				<td>{{$data->Jumlah_jam}}&nbsp Jam</td>
-				<td>
-					<a href="{{route('lemburp.edit',$data->id)}}" class='btn btn-primary'> Edit </a>
+				<td><center>
+					<a href="{{route('lemburp.edit',$data->id)}}" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"> Edit </a></span></center>
 				</td>
 				<td>
 					{!! Form::open(['method'=>'DELETE','route'=>['lemburp.destroy',$data->id]]) !!}
-					{!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+					{!! Form::submit('Hapus',['class'=>'btn btn-danger']) !!}
 					{!! Form::close() !!}
 				</td>
 			</tr>

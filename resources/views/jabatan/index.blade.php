@@ -24,12 +24,12 @@
 				<td>{{$data->kode_j}}</td>
 				<td>{{$data->nama_j}}</td>
 				<td>Rp.{{$data->besar_uang}}</td>
-				<td>
-					<a href="{{route('jabatan.edit',$data->id)}}" class='btn btn-primary'> Edit </a>
+				<td><center>
+					<a href="{{route('jabatan.edit',$data->id)}}" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"> Edit </a></span></center> 
 				</td>
 				<td>
 					{!! Form::open(['method'=>'DELETE','route'=>['jabatan.destroy',$data->id]]) !!}
-					{!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+					{!! Form::submit('Hapus',['class'=>'btn btn-danger']) !!}
 					{!! Form::close() !!}
 				</td>
 			</tr>

@@ -14,7 +14,7 @@
                         <th>Nama Pegawai</th>
                         <th>Nip Pegawai</th> 
                         <th>Status Pengambilan</th>
-                        <th colspan="3"><center>Opsi</center></th>
+                        <th colspan="3"><center>Action</center></th>
                         </tr>
 
                         @php
@@ -40,9 +40,9 @@
                         </h5>
 
                         
-                                <td><a class="btn btn-primary form-control" href="{{route('penggajian.show',$penggajians->id)}}">Lihat</a></td>
+                                <td><center><a class="btn btn-primary" href="{{route('penggajian.show',$penggajians->id)}}"><span class="glyphicon glyphicon-eye-open"></span>&nbsplihat</a></center></td>
                                      <td>{!!Form::open(['method'=>'DELETE','route'=>['penggajian.destroy',$penggajians->id]])!!}
-                                    {!!Form::submit('Delete',['class'=>'btn btn-danger col-md-12'])!!}</td>
+                                    {!!Form::submit('Hapus',['class'=>'btn btn-danger col-md-12'])!!}</td>
                                     {!!Form::close()!!}
                                 
                         </center>

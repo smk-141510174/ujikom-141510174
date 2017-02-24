@@ -31,7 +31,7 @@
 				</td>
 				<td>
 					{!! Form::open(['method'=>'DELETE','route'=>['tunjangan.destroy',$data->id]]) !!}
-					{!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+					{!! Form::submit('Hapus',['class'=>'btn btn-danger']) !!}
 					{!! Form::close() !!}
 				</td>
 			</tr>

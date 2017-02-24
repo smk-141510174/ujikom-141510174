@@ -26,12 +26,12 @@
 				<td>{{$data->golongan->nama_g}}</td>
 				<td>{{$data->jabatan->nama_j}}</td>
 				<td>Rp.{{$data->besar_uang}}</td>
-				<td>
-					<a href="{{route('kategori.edit',$data->id)}}" class='btn btn-primary'> Edit </a>
+				<td><center>
+					<a href="{{route('kategori.edit',$data->id)}}" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"> Edit </a></span></center>
 				</td>
 				<td>
 					{!! Form::open(['method'=>'DELETE','route'=>['kategori.destroy',$data->id]]) !!}
-					{!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+					{!! Form::submit('Hapus',['class'=>'btn btn-danger']) !!}
 					{!! Form::close() !!}
 				</td>
 			</tr>

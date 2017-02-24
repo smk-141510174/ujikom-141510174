@@ -24,14 +24,14 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('type_user') ? ' has-error' : '' }}">
-                            <label for="type_user" class="col-md-4 control-label">type_user</label>
+                            <label for="type_user" class="col-md-4 control-label">Permission</label>
 
                             <div class="col-md-6">
                                 <select id="type_user" class="form-control" name="type_user" value="{{ old('type_user') }}"  autofocus>
                                     <option value="">Pilih</option>
                                     <option value="Admin">Admin</option>
                                     <option value="HRD">HRD</option>
-                                    <option value="Bagian Keuangan">Bagian Keuangan</option>
+                                    <option value="BagianKeuangan">Bagian Keuangan</option>
                                     <option value="Karyawan">Karyawan</option>
                                 </select>
                                 @if ($errors->has('type_user'))

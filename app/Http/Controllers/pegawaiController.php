@@ -145,14 +145,16 @@ class pegawaiController extends Controller
     public function update(Request $request, $id)
     {
         $pegawai=Pegawai::where('id',$id)->first();
-        
-        if($pegawai['nip'] != Request('nip')){
+        $user=User::where('id',$pegawai->user_id)->first();
+        if($pegawai['nip'] != Request('nip') || $user['email'] != Request('email')){
             $roles=[
             'nip'=>'required|unique:pegawais',
             'jabatan_id'=>'required',
             'golongan_id'=>'required',
             'photo'=>'required',
-            
+            'name' => 'required|max:255',
+            'type_user' => 'required',
+            'email' => 'required|email|max:255|unique:users',
         ];
         }
         else{
@@ -161,7 +163,9 @@ class pegawaiController extends Controller
             'jabatan_id'=>'required',
             'golongan_id'=>'required',
             'photo'=>'required',
-            
+            'name' => 'required|max:255',
+            'type_user' => 'required',
+            'email' => 'required|email|max:255',
         ];
         }
         $sms=[
@@ -169,7 +173,14 @@ class pegawaiController extends Controller
             'nip.unique'=>'jangan sama',
             'jabatan_id.required'=>'jangan kosong',
             'golongan_id.required'=>'jangan kosong',
-            'photo.required'=>'jangan kosong',   
+            'photo.required'=>'jangan kosong',
+            'name.required'=>'jangan kosong',
+            'name.max'=>'max 255',
+            'type_user.required'=>'jangan kosong',
+            'email.required'=>'jangan kosong',
+            'email.email'=>'harus berbentuk email',
+            'email.max'=>'max 255',
+            'email.unique'=>'sudah ada',
             
         ];
         $validasi=Validator::make(Input::all(),$roles,$sms);
@@ -178,13 +189,23 @@ class pegawaiController extends Controller
                 ->WithErrors($validasi)
                 ->WithInput();
         }
+        $user=User::find($pegawai->user_id);
+        $user->name = Request('name');
+        $user->type_user = Request('type_user');
+        $user->email = Request('email');
+        $user->save();
+        
         $file= Input::file('photo');
         $destination= '/assets/image/';
         $filename=$file->getClientOriginalName();
         $uploadsuccess=$file->move($destination,$filename);
+        
         if($uploadsuccess){
+
+        
             $pegawai =Pegawai::find($id);
             $pegawai->nip = Request('nip');
+            $pegawai->user_id = $user->id;
             $pegawai->jabatan_id = Request('jabatan_id');
             $pegawai->golongan_id = Request('golongan_id');
             $pegawai->photo=$filename;

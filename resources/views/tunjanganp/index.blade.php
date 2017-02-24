@@ -20,7 +20,7 @@
 				<td>{{$data->pegawai->user->name}}</td>
 				<td><center>
 					{!! Form::open(['method'=>'DELETE','route'=>['tunjanganp.destroy',$data->id]]) !!}
-					{!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+					{!! Form::submit('Hapus',['class'=>'btn btn-danger']) !!}
 					{!! Form::close() !!}</center>
 				</td>
 			</tr>

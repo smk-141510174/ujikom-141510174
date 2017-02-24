@@ -13,8 +13,8 @@
 										<tr>
 											<th>No</th>
 											<th>NIP</th>
-											<th>Nama Golongan</th>
 											<th>Nama Jabatan</th>
+											<th>Nama Golongan</th>
 											<th>Photo</th>
 										</tr>
 									</thead>
@@ -43,7 +43,7 @@
 									<thead >
 										<tr>
 											<th>Name</th>
-											<th>Type User</th>
+											<th>Permission</th>
 											<th>Email</th>
 											<th colspan="2"><center>Action</center></th>
 										</tr>
@@ -56,12 +56,12 @@
 											<td>{{$data->user->type_user}}</td>
 											<td>{{$data->user->email}}</td>
 											
-											<td>
-												<a href="{{route('pegawai.edit',$data->id)}}" class='btn btn-primary'> Edit </a>
+											<td><center>
+												<a href="{{route('pegawai.edit',$data->id)}}" class='btn btn-primary'> <span class="glyphicon glyphicon-pencil"> Edit </a></span></center>
 											</td>
 											<td>
 												{!! Form::open(['method'=>'DELETE','route'=>['pegawai.destroy',$data->id]]) !!}
-												{!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+												{!! Form::submit('Hapus',['class'=>'btn btn-danger']) !!}
 												{!! Form::close() !!}
 											</td>
 										</tr>
